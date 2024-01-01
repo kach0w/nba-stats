@@ -55,7 +55,10 @@ fig.update_layout(xaxis_title='Date', yaxis_title='Margin')
 fig.update_traces(marker=dict(size=15))
 
 st.header("🏀 {}".format(us))
-st.write("### All Games - (" + str(len(df[df['win'] == "green"])) + " wins | " + str(len(df[df['win'] == "red"])) + " losses)")
+wins = str(len(df[df['win'] == "green"]))
+losses = str(len(df[df['win'] == "red"]))
+st.write("### All Games" + "W   L")
+st.write('## ' + wins + losses)
 st.plotly_chart(fig)
 
 current_date = datetime.now().strftime("%Y-%m-%d")
