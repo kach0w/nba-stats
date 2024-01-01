@@ -7,7 +7,8 @@ import pickle
 from datetime import datetime, timezone, timedelta
 import os
 import plotly.express as px
-from config import API_KEY
+# from config import API_KEY
+API_KEY = st.secrets["API_KEY"]
  
 team = st.text_input('Team Name', 'Warriors')
 link1 = "https://www.balldontlie.io/api/v1/teams"
