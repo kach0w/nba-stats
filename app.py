@@ -58,8 +58,8 @@ st.header("🏀 {}".format(us))
 wins = str(len(df[df['win'] == "green"]))
 losses = str(len(df[df['win'] == "red"]))
 st.write("### All Games")
-header_html = f"<div style='text-align: center; position: relative;'><span style='position: absolute; top: 0; left: 50%; transform: translateX(-50%);'>W</span>{wins}</div>"
-st.markdown(header_html, unsafe_allow_html=True)
+st.write("W  L")
+st.write(wins + "  " + losses)
 st.plotly_chart(fig)
 
 current_date = datetime.now().strftime("%Y-%m-%d")
