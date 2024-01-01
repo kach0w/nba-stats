@@ -47,7 +47,7 @@ for x in sorted_json:
     }
     games.append(x)
     
-df = pd.DataFrame(games[:10])
+df = pd.DataFrame(games)
 df['win'] = np.where(df['our_score'] > df['their_score'], 'green', 'red')
 # st.write(df)
 fig = px.scatter(df, x='date', y='margin', color='win', color_discrete_map={'red': 'red', 'green': 'green'}, hover_data=['opponent', 'date', 'margin'])
@@ -55,7 +55,7 @@ fig.update_layout(xaxis_title='Date', yaxis_title='Margin')
 fig.update_traces(marker=dict(size=15))
 
 st.header("🏀 {}".format(us))
-st.write("### Last 10 Games")
+st.write("### All Games")
 st.plotly_chart(fig)
 
 current_date = datetime.now().strftime("%Y-%m-%d")
