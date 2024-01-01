@@ -58,7 +58,7 @@ st.header("🏀 {}".format(us))
 wins = str(len(df[df['win'] == "green"]))
 losses = str(len(df[df['win'] == "red"]))
 st.write("### All Games")
-st.write("W " + " " + " " + " L")
+st.write("W   L")
 st.write(wins + "  " + losses)
 st.plotly_chart(fig)
 
